@@ -50,15 +50,27 @@ let aaat = fetch('https://reqres.in/api/users', {
     console.log(data)
   })
 
-///
-сonst aaart = fetch('https://reqres.in/api/users', {
+
+ const fetTwoMetod = {
+    method: 'POST',
+    body: JSON.stringify({ "first_name": "intocode" }),
+    headers: {'Content-type': 'application/json'}
+  }
+fetch ('https://reqres.in/api/users', fetTwoMetod)
+.then(res => res.json())
+  .then((data) => {
+    console.log(data)
+  })
+
+let aaam = fetch('https://reqres.in/api/users', {
   method: 'POST',
-  body: JSON.stringify({ "first_name": "intocode" }),
+  body: `{ "into": "code" }`,
   headers: {
     'Content-type' : 'application/json'
   }
 })
   .then(res => res.json())
   .then((data) => {
-    console.log(data)
+    console.log(data.id)
   })
+
